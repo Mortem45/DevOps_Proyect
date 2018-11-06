@@ -1,0 +1,26 @@
+{
+  "name": "proyectatlas",
+  "version": "1.0.0",
+  "description": "proyecto Arq2",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mortem45/DevOps_Proyect.git"
+  },
+  "author": "Mortem45 (Brandon Monterrozo ste45_007@hotmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mortem45/DevOps_Proyect/issues"
+  },
+  "homepage": "https://github.com/Mortem45/DevOps_Proyect#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  }
+}
