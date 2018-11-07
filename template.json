@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "82a18e068538217fd63cc3aecca708095701776d9e23d729a3af9077e38e25c2",
+      "image": "coreos-stable",
+      "region": "nyc3",
+      "size": "512mb",
+      "snapshot_name": "ProyectAtlas-snapshot",
+      "ssh_username": "core"
+    }
+  ],
+  "provisioners": [
+    { "type": "shell",
+      "inline": [
+        "git clone https://github.com/Mortem45/DevOps_Proyect.git",
+        "cd DevOps_Proyect/",
+        "docker build -t devops .",
+        "docker run -d -p 3000:3000 devops"
+      ]
+    }
+  ]
+}
