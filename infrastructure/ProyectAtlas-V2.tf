@@ -4,15 +4,14 @@ resource "digitalocean_tag" "ProyectAtlas-V2-tag" {
 }
 resource "digitalocean_droplet" "ProyectAtlas-V2" {
   count  = 2
-  image  = "40048038"
+  image  = "${var.image_id}"
   name   = "ProyectAtlas-V2"
   region = "nyc3"
   size   = "s-1vcpu-1gb"
   tags   = ["${digitalocean_tag.ProyectAtlas-V2-tag.id}"]
-  ssh_keys = [
-    "${var.ssh_fingerprint}"
-    ]
+  ssh_keys = ["${var.ssh_fingerprint}"]
   user_data = "${file("user-data.web")}"
+
 }
 
 resource "digitalocean_loadbalancer" "ProyectAtlas-V2" {
