@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "build_number": "{{env `CIRCLE_BUILD_NUM`}}"
+  },
   "builders": [
     {
       "type": "digitalocean",
@@ -6,7 +9,7 @@
       "image": "coreos-stable",
       "region": "nyc3",
       "size": "512mb",
-      "snapshot_name": "ProyectAtlas-snapshot",
+      "snapshot_name": "ProyectAtlas-Snapshot-{{user `build_number`}}",
       "ssh_username": "core"
     }
   ],
