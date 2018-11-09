@@ -60,3 +60,8 @@ typings/
 
 # next.js build output
 .next
+
+.terraform
+
+terraform.tfstate
+terraform.tfstate.backup
