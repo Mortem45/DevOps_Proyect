@@ -11,6 +11,9 @@ resource "digitalocean_droplet" "ProyectAtlas-V2" {
   tags   = ["${digitalocean_tag.ProyectAtlas-V2-tag.id}"]
   ssh_keys = ["${var.ssh_fingerprint}"]
   user_data = "${file("user-data.web")}"
+  lifecycle {
+    create_before_destroy = true
+  }
 
 }
 
