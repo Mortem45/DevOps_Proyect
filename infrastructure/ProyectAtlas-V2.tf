@@ -3,7 +3,7 @@ resource "digitalocean_tag" "ProyectAtlas-V2-tag" {
   name = "WebSite-V2"
 }
 resource "digitalocean_droplet" "ProyectAtlas-V2" {
-  count  = 3
+  count  = 2
   image  = "40048038"
   name   = "ProyectAtlas-V2"
   region = "nyc3"
@@ -29,7 +29,8 @@ resource "digitalocean_loadbalancer" "ProyectAtlas-V2" {
 
   healthcheck {
     port = 3000
-    protocol = "tcp"
+    protocol = "http"
+    path = "/"
   }
 
   droplet_tag = "${digitalocean_tag.ProyectAtlas-V2-tag.name}"
