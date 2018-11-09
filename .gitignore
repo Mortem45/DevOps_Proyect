@@ -62,6 +62,3 @@ typings/
 .next
 
 .terraform
-
-terraform.tfstate
-terraform.tfstate.backup
