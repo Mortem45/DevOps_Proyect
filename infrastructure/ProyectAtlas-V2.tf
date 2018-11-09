@@ -37,3 +37,4 @@ resource "digitalocean_loadbalancer" "ProyectAtlas-V2" {
 
   droplet_tag = "${digitalocean_tag.ProyectAtlas-V2-tag.name}"
 }
+

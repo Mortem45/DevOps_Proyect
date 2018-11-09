@@ -53,6 +53,9 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            -"01:01:4f:07:2f:9a:df:0b:9d:ba:b3:58:33:3f:c9:ac"
       - run:
           name: deploy to prod
           command: sh deployments/prod.sh
@@ -64,7 +67,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
 
 workflows:
   version: 2
