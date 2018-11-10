@@ -77,7 +77,7 @@ jobs:
             git clone --depth 1 https://${DOCS_GITHUB_TOKEN}@github.com/Mortem45/DevOps_Proyect.git
       - deploy:
           name: Trigger docs deployment
-          working_directory: ~/workdir/DevOps_Proyect
+          working_directory: ~/repo/DevOps_Proyect
           command: |
             git config credential.helper 'cache --timeout=120'
             git config user.email $GH_EMAIL
@@ -105,7 +105,7 @@ workflows:
                 only: master
         - deploy-prod-commit:
             requires:
-              - build
+              - deploy-prod
             filters:
               branches:
                 only: master
