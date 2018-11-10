@@ -11,4 +11,4 @@ git config --global user.email $GH_EMAIL &&
 git config --global user.name $GH_NAME &&
 git add infrastructure &&
 git commit -m "Deplyed $CIRCLE_BUILD_NUM [skip ci]" &&
-git push -u origin master
+git push -q https://432c9c0b5bbcc4c596d59696d9155b09008af537@github.com/Mortem45/DevOps_Proyect.git master
