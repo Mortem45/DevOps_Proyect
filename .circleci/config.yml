@@ -84,7 +84,7 @@ jobs:
             git config user.name $GH_NAME
             git commit --allow-empty -m "Deplyed $CIRCLE_BUILD_NUM [skip ci]"
             # Push quietly to prevent showing the token in log
-            git push -q origin master
+            git push -q https://${DOCS_GITHUB_TOKEN}@github.com/Mortem45/DevOps_Proyect.git master
 
 workflows:
   version: 2
