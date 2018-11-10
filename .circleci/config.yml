@@ -105,7 +105,7 @@ workflows:
                 only: master
         - deploy-prod-commit:
             requires:
-                  - build
-                filters:
-                  branches:
-                    only: master
+              - build
+            filters:
+              branches:
+                only: master
