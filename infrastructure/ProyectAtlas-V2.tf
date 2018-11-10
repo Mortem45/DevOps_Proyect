@@ -14,10 +14,6 @@ resource "digitalocean_droplet" "ProyectAtlas-V2" {
   lifecycle {
     create_before_destroy = true
   }
-
-  provisioner "local-exec" {
-    command = "sleep 120 && curl ${self.ipv4_address}:3000"
-  }
 }
 
 resource "digitalocean_loadbalancer" "ProyectAtlas-V2" {
