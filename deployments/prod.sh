@@ -7,8 +7,10 @@ packer build deployments/template.json &&
 export TF_VAR_image_id=$(curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer 82a18e068538217fd63cc3aecca708095701776d9e23d729a3af9077e38e25c2" "https://api.digitalocean.com/v2/images?private=true" | jq ."images[] | select(.name == \"ProyectAtlas-Snapshot-$CIRCLE_BUILD_NUM\") | .id")
 echo "Got the image id of the new digital ocean image" && echo $TF_VAR_image_id &&
 cd infrastructure && terraform init -input=false && terraform apply -input=false -auto-approve && cd .. &&
+git clone --depth 1 https://github.com/Mortem45/DevOps_Proyect.git &&
+cd DevOps_Proyect &&
 git config --global user.email $GH_EMAIL &&
 git config --global user.name $GH_NAME &&
 git add infrastructure &&
 git commit -m "Deplyed $CIRCLE_BUILD_NUM [skip ci]" &&
-git push -q https://432c9c0b5bbcc4c596d59696d9155b09008af537@github.com/Mortem45/DevOps_Proyect.git master
+git push -q origin master
